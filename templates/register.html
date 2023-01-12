@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration PAGE</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+
+<body>
+
+
+    <div class="contact1">
+        <div class="notification">
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li {% if message.tags %} class="{{ message.tags }}" {% endif %}> O {{ message }} !!</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+        <div class="content">
+            <h1>STUDY TOP <span> Coaching Centre</span> </h1>
+            <p class="para">
+            <H2 style=" color: rgb(255, 255, 255);">BE A PART OF THE #1 <b> COACHING INSTITUTE
+
+                </b>
+            </H2>
+            <h5 style=" color:rgb(196, 171, 171);"><br>➤ Our 2 Year Program is carefully designed course with
+                Systematic Study Plan, to help students
+                excel in MHT-CET, <br> JEE Main and Std. XI, XII.
+                <br>➤ We have a team of highly experienced professors who have developed a deep insight into the
+                nature and trend of the <br> board exams and engineering entrance exams. They are very friendly
+                and
+                approachable and make every effort to <br> make the subject interesting for the students.
+                <br>
+                ➤ In our Study material, core concepts are explained lucidly through comprehensive theory and
+                solved examples <br> which are designed from basic to advanced level. Students are given
+                complete Study Material for MHT- CET, <br> JEE Main, Std. XI & XII. Module on Short Cut methods
+                and memory tips will also be given for quick revision.
+                <br> ➤ Inbuilt doubt solving sessions help students to clear doubts and strengthen their concepts,
+                ensuring smooth <br> process of learning. Additional support is available online.
+
+
+
+
+            </h5>
+
+            <br><br>
+
+            </p>
+            <button class="cn"><a href="tel:+91 7028305014">Contact us</a></button>
+        </div>
+        <div class="form">
+
+            <h2 class="pn"> Register Here</h2>
+            <form action="/register" method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+
+                    <input type='name' id='username' name="username" class="form-control" placeholder="Enter username">
+                    <input type="name" id="fname " name="fname" class="form-control" placeholder="Enter First Name">
+                    <input type="name" id="lname " name="lname" class="form-control" placeholder="Enter Last Name">
+                    <input type="email" id="email " name="email" class="form-control" placeholder="Enter Email">
+                    <input type="password" id="pass1 " name="pass1" class="form-control" placeholder="Enter Password">
+                    <input type="password" id="pass2 " name="pass2" class="form-control" placeholder="Confirm Password">
+
+                </div>
+                <button type="submit" class="btn btn-primary"> Submit </button>
+
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+
+                <button type="submit" class="btn btn-primary"> <a href="/">Home</a></button>
+
+            </form>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

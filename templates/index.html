@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+</head>
+<link rel="stylesheet" href="static/style.css">
+<style>
+    .home {
+        width: 100%;
+        background: linear-gradient(to top, rgba(255, 254, 254, 0.5)50%, rgba(255, 249, 249, 0.5)50%), url(static/bg3.jpg);
+        background-position: center;
+        background-size: cover;
+        height: 109vh;
+    }
+
+    .content {
+        top: 100px;
+        width: 1200px;
+        height: auto;
+        margin: auto;
+        color: rgb(12, 36, 58);
+        position: relative;
+    }
+
+    .content .para {
+        padding-left: 20px;
+        padding-bottom: 25px;
+        font-family: Arial;
+        letter-spacing: 1.2px;
+        line-height: 30px;
+
+    }
+
+    .content h1 {
+        font-family: 'Times New Roman';
+        font-size: 50px;
+        padding-left: 0px;
+        padding-right: 750px;
+        letter-spacing: 2px;
+    }
+
+    .form h2 h3 h4 {
+        font-family: 'Times New Roman';
+        font-size: 50px;
+        padding-left: 20px;
+        padding-right: 300px;
+        letter-spacing: 2px;
+    }
+
+    .form ul {
+        font-family: 'Times New Roman';
+        font-size: 15px;
+        padding-left: 20px;
+        padding-right: 300px;
+        letter-spacing: 1px;
+        color: rgb(152, 192, 179);
+
+        display: inline;
+        text-align: center;
+    }
+
+
+    .content .cn {
+        width: 150px;
+        height: 40px;
+        background: orange;
+        border: none;
+        margin-bottom: 10px;
+        margin-left: 20px;
+        font-size: 18px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.3s ease;
+    }
+
+    .form .cn {
+        width: 160px;
+        height: 40px;
+        background: orange;
+        border: none;
+        margin-bottom: 10px;
+        margin-left: 20px;
+        font-size: 18px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.3s ease;
+    }
+
+    .content .cn a {
+        text-decoration: none;
+        color: black;
+        transition: 0.3s ease;
+    }
+
+    .form .cn a {
+        text-decoration: none;
+        color: black;
+        transition: 0.3s ease;
+    }
+
+    .cn:hover {
+        background-color: aliceblue;
+    }
+
+    .content span {
+        color: orange;
+        font-size: 60px;
+    }
+
+    .form {
+        width: 241px;
+        height: 80px;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.8)50%, rgba(0, 0, 0, 0.8)50%);
+        position: absolute;
+        top: 150px;
+        left: 900px;
+        border-radius: 10px;
+        padding: 25px;
+    }
+
+    .form h2 {
+        width: 220px;
+        font-family: sans-serif;
+        text-align: center;
+        color: orange;
+        font-size: 22px;
+        background-color: rgb(36, 36, 36);
+        border: 10px;
+        margin: 2px;
+        padding: 8px;
+        border-radius: 10px;
+
+    }
+    .notifiaction .messages {
+        color: rgb(250, 240, 240);
+        font-size: medium;
+        text-align: center;
+    }
+</style>
+
+<body>
+
+    <div class="home">
+        <div class="notification" >
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li {% if message.tags %} class="{{ message.tags }}" {% endif %}> {{ message }} !!</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+
+        <div class="content">
+            <h1>STUDY TOP <span> Coaching Centre</span> </h1>
+            <p class="para">
+            <H2 style=" color: rgb(48, 11, 11);">BE A PART OF THE #1 <b> COACHING INSTITUTE
+
+                </b>
+            </H2>
+            <h5 style=" color:rgb(90, 48, 48);"><br>➤ Our 2 Year Program is carefully designed course with
+                Systematic Study Plan, to help students
+                excel in MHT-CET, <br> JEE Main and Std. XI, XII.
+                <br>➤ We have a team of highly experienced professors who have developed a deep insight into the
+                nature and trend of the <br> board exams and engineering entrance exams. They are very friendly
+                and
+                approachable and make every effort to <br> make the subject interesting for the students.
+                <br>
+                ➤ In our Study material, core concepts are explained lucidly through comprehensive theory and
+                solved examples <br> which are designed from basic to advanced level. Students are given
+                complete Study Material for MHT- CET, <br> JEE Main, Std. XI & XII. Module on Short Cut methods
+                and memory tips will also be given for quick revision.
+                <br> ➤ Inbuilt doubt solving sessions help students to clear doubts and strengthen their concepts,
+                ensuring smooth <br> process of learning. Additional support is available online.
+
+
+
+
+            </h5>
+            <br><br>
+
+            </p>
+            <button class="cn"><a href="tel:+91 7028305014">Contact us</a></button>
+        </div>
+        
+        <div class="form">
+
+
+            {% if user.is_authenticated %}
+
+
+            <h2>Welcome {{fname}}</h2>
+            
+            
+            {% endif %}
+            
+            <br><br><br>
+            <br><br><br>
+
+            <br><br><br>
+            <br><br><br>
+            <br><br><br>
+            <br><br><br>
+            <button type="button" class="cn"> <a href="signout">Logout</a></button>
+        </div>
+
+    </div>
+</body>
+
+</html>
